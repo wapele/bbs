@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 
-Vue.config.debug = true;//开启错误提示
+Vue.config.debug = false;//开启错误提示
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

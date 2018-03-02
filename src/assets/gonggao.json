@@ -1,0 +1,33 @@
+{
+    "code":0,
+    "count":"10",
+    "msg":"success",
+    "data":[
+        {
+            "id":"1"
+            ,"title":"vue开发的社区模板"
+            ,"author":"wapele"
+            ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
+            ,"level":"3"
+            ,"status":"0"
+            ,"credit":"100"
+            ,"clicks":"1000"
+            ,"createTime":"20180204"           
+            
+        },
+        {
+            "id":"2"
+            ,"title":"vue开发的社区模板2"
+            ,"author":"wapele"
+            ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
+            ,"level":"3"
+            ,"status":"1"
+            ,"credit":"100"
+            ,"clicks":"1000"
+            ,"createTime":"20180204"           
+            
+        }
+    ]
+
+
+}

@@ -15,7 +15,6 @@ import indexleft from '../../components/index/left'
 import indexright from '../../components/index/right'  
 export default {
   name: 'IndexMain',
-  data () {},
   components:{indextop,indexleft,indexright}
 }
 </script>

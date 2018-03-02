@@ -186,7 +186,6 @@
 </template>
 <script>
 export default {
-  name: 'indexright',
-  data () {}
+  name: 'indexright'
 }
 </script>

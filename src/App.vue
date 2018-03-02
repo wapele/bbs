@@ -8,7 +8,8 @@
 
 <script>
 import topmenu from './components/topmenu'   
-import myfooter from './components/footer'   
+import myfooter from './components/myfooter' 
+ 
 export default {
   name: 'App',
   components:{topmenu,myfooter}

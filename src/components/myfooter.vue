@@ -11,8 +11,7 @@
 
 <script>
 export default {
-  name: 'footer',
-  data () {}
+  name: 'myfooter'
   
 }
 </script>

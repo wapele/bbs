@@ -6,26 +6,26 @@
           <a href="#signin" class="layui-hide-sm layui-show-xs-block fly-right" id="LAY_goSignin" style="color: #FF5722;">去签到</a>
         </div>
         <ul class="fly-list">
-          <li>
+          <li v-for="v in notice" :key="v.id">
             <a href="user/home.html" class="fly-avatar">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
+              <img v-bind:src="v.headimg" v-bind:alt="v.author">
             </a>
             <h2>
               <a class="layui-badge">动态</a>
-              <a href="jie/detail.html">基于 layui 的极简社区页面模版</a>
+              <a href="jie/detail.html">{{v.title}}</a>
             </h2>
             <div class="fly-list-info">
               <a href="user/home.html" link>
-                <cite>贤心</cite>
+                <cite>{{v.author}}</cite>
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
                 <i class="layui-badge fly-badge-vip">VIP3</i>
               </a>
-              <span>刚刚</span>
+              <span>{{v.createTime}}</span>
               
               <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span>
               <span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>
               <span class="fly-list-nums"> 
-                <i class="iconfont icon-pinglun1" title="回答"></i> 66
+                <i class="iconfont icon-pinglun1" title="回答"></i> {{v.clicks}}
               </span>
             </div>
             <div class="fly-list-badge">
@@ -149,13 +149,13 @@
         </div>
 
         <ul class="fly-list">          
-          <li>
+          <li >
             <a href="user/home.html" class="fly-avatar">
               <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
             </a>
             <h2>
               <a class="layui-badge">分享</a>
-              <a href="jie/detail.html">基于 layui 的极简社区页面模版</a>
+              <a href="jie/detail.html"></a>
             </h2>
             <div class="fly-list-info">
               <a href="user/home.html" link>
@@ -183,7 +183,7 @@
             </a>
             <h2>
               <a class="layui-badge">动态</a>
-              <a href="jie/detail.html">基于 layui 的极简社区页面模版</a>
+              <a href="jie/detail.html">基于 layui 的极简社区页面模版1</a>
             </h2>
             <div class="fly-list-info">
               <a href="user/home.html" link>
@@ -494,8 +494,24 @@
     </div>
 </template>
 <script>
+import axios from 'axios' 
 export default {
-  name: 'indexleft',
-  data () {}
+  name: 'indexleft'
+  ,data(){
+    return {
+      notice:[],
+    }
+  }
+  ,created(){
+      axios.get('/static/json/gonggao.json')
+      .then(response=>{
+         console.log(response.data.data);
+         this.notice=response.data.data;
+      })
+      .catch(error=>{
+          console.log(error);
+          alert('网络错误，不能访问');
+      })
+  },
 }
 </script>
