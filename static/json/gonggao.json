@@ -9,6 +9,9 @@
             ,"author":"wapele"
             ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
             ,"level":"3"
+            ,"top":1
+            ,"incisive":"1"
+            ,"vip":"1"
             ,"status":"0"
             ,"credit":"100"
             ,"clicks":"1000"
@@ -21,6 +24,41 @@
             ,"author":"wapele"
             ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
             ,"level":"3"
+            ,"top":1
+            ,"incisive":"1"
+            ,"vip":"2"
+            ,"status":"1"
+            ,"credit":"100"
+            ,"clicks":"1000"
+            ,"createTime":"20180204"           
+            
+        }
+        ,
+        {
+            "id":"3"
+            ,"title":"置顶文章3"
+            ,"author":"wapele"
+            ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
+            ,"level":"3"
+            ,"top":1
+            ,"incisive":"1"
+            ,"vip":"3"
+            ,"status":"1"
+            ,"credit":"100"
+            ,"clicks":"1000"
+            ,"createTime":"20180204"           
+            
+        }
+        ,
+        {
+            "id":"4"
+            ,"title":"精华文章"
+            ,"author":"wapele"
+            ,"headimg":"http://www.fjlmnet.com/static/user.jpg"
+            ,"level":"3"
+            ,"top":1
+            ,"incisive":"1"
+            ,"vip":"4"
             ,"status":"1"
             ,"credit":"100"
             ,"clicks":"1000"

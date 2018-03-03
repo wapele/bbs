@@ -18,21 +18,22 @@
               <a href="user/home.html" link>
                 <cite>{{v.author}}</cite>
                 <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
-                <i class="layui-badge fly-badge-vip">VIP3</i>
+                <i class="layui-badge fly-badge-vip" >VIP{{v.vip}}</i>
               </a>
               <span>{{v.createTime}}</span>
               
               <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span>
-              <span class="layui-badge fly-badge-accept layui-hide-xs" v-if="v.status">已结</span>
+              <span class="layui-badge fly-badge-accept layui-hide-xs" v-if="v.status ==1">已结</span>
               <span class="fly-list-nums"> 
                 <i class="iconfont icon-pinglun1" title="回答"></i> {{v.clicks}}
               </span>
             </div>
             <div class="fly-list-badge">
-              <!--
-              <span class="layui-badge layui-bg-black">置顶</span>
-              <span class="layui-badge layui-bg-red">精帖</span>
-              -->
+              
+              <span class="layui-badge layui-bg-black" v-if="v.top ==1">置顶</span>
+              
+              <span class="layui-badge layui-bg-red" v-if="v.incisive==1">精帖</span>
+              
             </div>
           </li>
 
