@@ -23,7 +23,7 @@
               <span>{{v.createTime}}</span>
               
               <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span>
-              <span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>
+              <span class="layui-badge fly-badge-accept layui-hide-xs" v-if="v.status">已结</span>
               <span class="fly-list-nums"> 
                 <i class="iconfont icon-pinglun1" title="回答"></i> {{v.clicks}}
               </span>
@@ -35,6 +35,8 @@
               -->
             </div>
           </li>
+
+
           <li>
             <a href="user/home.html" class="fly-avatar">
               <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" alt="贤心">
