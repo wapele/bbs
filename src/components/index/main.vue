@@ -13,6 +13,7 @@
 import indextop from '../../components/index/top'   
 import indexleft from '../../components/index/left'  
 import indexright from '../../components/index/right'  
+
 export default {
   name: 'IndexMain',
   components:{indextop,indexleft,indexright}

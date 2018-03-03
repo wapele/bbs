@@ -49,67 +49,15 @@
       <div class="fly-panel fly-rank fly-rank-reply" id="LAY_replyRank">
         <h3 class="fly-panel-title">回贴周榜</h3>
         <dl>
-          <!--<i class="layui-icon fly-loading">&#xe63d;</i>-->
-          <dd>
+          <!--
+          <i class="layui-icon fly-loading">&#xe63d;</i>
+          -->
+          <dd v-for="v in user" :key="v.id">
             <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
+              <img v-bind:src="v.headimg" v-bind:alt="v.name"><cite>{{v.name}}</cite><i>{{v.answer}}次回答</i>
             </a>
           </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
-          <dd>
-            <a href="user/home.html">
-              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"><cite>贤心</cite><i>106次回答</i>
-            </a>
-          </dd>
+          
         </dl>
       </div>
 
@@ -185,7 +133,27 @@
     </div>
 </template>
 <script>
+import axios from 'axios' 
 export default {
   name: 'indexright'
+  ,data(){
+    return {
+      user:[],
+    }
+  }
+  ,created(){
+      
+          axios.get('/static/json/reply.json')
+          .then(response=>{
+            console.log(response.data.data);
+            this.user=response.data.data;
+          })
+          .catch(error=>{
+              console.log(error);
+              alert('网络错误，不能访问');
+          })
+    
+      
+  },
 }
 </script>
